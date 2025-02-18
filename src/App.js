@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Layout from "./components/Layout/Layout";
+import { useDisplayContext } from "./context/DisplayContext";
+
+function getGreeting() {
+  const hour = new Date().getHours();
+  if (hour < 12) return "Good Morning";
+  if (hour < 18) return "Good Afternoon";
+  return "Good Evening";
+}
 
 function App() {
+  const { submissions } = useDisplayContext();
+  const latestName =
+    submissions.length > 0 ? submissions[submissions.length - 1].name : "User";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container py-5">
+      <h1 className="app-title text-center mb-4">
+        {getGreeting()}, {latestName}
+      </h1>
+      <div className="glass-container layout-animation">
+        <Layout />
+      </div>
     </div>
   );
 }
