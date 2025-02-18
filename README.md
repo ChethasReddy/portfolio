@@ -21,10 +21,6 @@ A modern web application built with React that allows users to submit and view p
 4. Open in browser
    ### `http://localhost:3000`
 
-## Implementation Details
-
-In the project directory, you can run:
-
 # Key Components
 
 1. Form Component: Handles user input with real-time validation
@@ -45,7 +41,7 @@ In the project directory, you can run:
 
         2. Age validation (integer, range checks)
 
-        3. ✨ Dynamic welcome message showing latest submission
+        3. ✨ Dynamic Greeting message showing latest submission
 
 ### 🎨 Modern UI with:
 
